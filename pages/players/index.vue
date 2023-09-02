@@ -1,7 +1,10 @@
 <script setup lang="ts">
 
-const { data } : any = await useFetch("https://fantasy.premierleague.com/api/bootstrap-static/")
-let players = data.value.elements
+const { data } : any = await useFetch("/api/players")
+let players : any = [] 
+if(data.value){
+    players = data.value.players
+}
 
 const allColumns = [ {
     key: 'now_cost',
@@ -87,6 +90,9 @@ function sort(players : any, column : any, order: boolean){
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                 </NuxtLink>
+            </template>
+            <template #now_cost-data="{ row }">
+                <span>£{{ (row.now_cost / 10).toFixed(1) }}m</span>
             </template>
             <template #second_name-data="{ row }">
                 <span>{{ row.first_name }} {{ row.second_name }}</span>
