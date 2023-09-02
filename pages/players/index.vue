@@ -2,9 +2,20 @@
 
 const { data } = await useFetch("https://fantasy.premierleague.com/api/bootstrap-static/")
 
+const columns = [{
+  key: 'first_name',
+  label: 'First Name'
+}, {
+  key: 'second_name',
+  label: 'Second Name'
+}]
+
 </script>
 
 <template>
+    <div class="container">
+        <UTable :columns="columns" :rows="data.elements" />
+    </div>
     <div class="container">
         <h1>Players</h1>
         <ul>

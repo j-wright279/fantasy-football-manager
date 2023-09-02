@@ -26,8 +26,4 @@
     .headerItem {
         margin: 10px;
     }
-    a {
-        color: black;
-        text-decoration: none;
-    }
 </style>
