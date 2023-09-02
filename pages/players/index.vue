@@ -84,11 +84,7 @@ function sort(players : any, column : any, order: boolean){
         <UTable :columns="selectedColumns" :rows="filteredRows">
             <template #action-data="{ row }">
                 <NuxtLink :to="`/players/${row.id}`">
-                    <!--Eye icon SVG from heroicons-->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
+                    <UIcon name="i-heroicons-eye" style="font-size: 20px;"></UIcon>
                 </NuxtLink>
             </template>
             <template #now_cost-data="{ row }">
@@ -98,7 +94,9 @@ function sort(players : any, column : any, order: boolean){
                 <span>{{ row.first_name }} {{ row.second_name }}</span>
             </template>
         </UTable>
-        <UPagination v-model="page" :total="players.length"></UPagination>
+        <div class="table-pagination-container">
+            <UPagination v-model="page" :total="players.length" class="table-pagination"></UPagination>
+        </div>
     </div>
 </template>
 
@@ -115,6 +113,7 @@ function sort(players : any, column : any, order: boolean){
     .table-option-container {
         width: 30%;
         margin-right: 1%;
+        margin: 0 1% 15px 0;
     }
     .table-button {
         width: 7%
@@ -127,5 +126,12 @@ function sort(players : any, column : any, order: boolean){
         display: block;
         margin-bottom: 7px;
         color: gray;
+    }
+    .table-pagination {
+        margin: 20px
+    }
+    .table-pagination-container{
+        display: flex;
+        justify-content: right;
     }
 </style>
