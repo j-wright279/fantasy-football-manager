@@ -1,11 +1,11 @@
 <script setup>
 
-
 const route = useRoute()
-const { data } = await useFetch("/api/general")
+const { data: player_history } = await useFetch("/api/playerHistory/32")
+const { data: general } = await useFetch("/api/general")
 
-const list_of_players = data.value.elements
-const list_of_teams = data.value.teams
+const list_of_players = general.value.elements
+const list_of_teams = general.value.teams
 
 // Set the tabs for the page
 const items = [{
@@ -51,7 +51,7 @@ for (var i=0, iLen=list_of_teams.length; i<iLen; i++) {
                     <PlayerStatsTab :player="player"/>
                 </div>
                 <div v-else="item.index === 2">
-                    {{ item.index }}
+                    <PlayerHistoryTab :player="player" />
                 </div>
             </UCard>
             </template>
