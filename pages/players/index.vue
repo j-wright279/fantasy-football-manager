@@ -17,7 +17,7 @@ const allColumns = [ {
     selected: true
 }, {
     key: 'action',
-    label: 'Action',
+    label: 'View',
     selected: true
 }]
 
@@ -74,7 +74,7 @@ function sort(players : any, column : any, order: boolean){
                 <USelectMenu v-model="sortColumn" :options="optionColumns"/>
             </div>
             <div class="table-button">
-                <label class="table-option-label">Sort Order</label>
+                <label class="table-option-label">Order</label>
                 <UToggle v-model="sortOrder" on-icon="i-heroicons-arrow-down" off-icon="i-heroicons-arrow-up"></UToggle>
             </div>
         </div>
