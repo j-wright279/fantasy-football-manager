@@ -1,7 +1,7 @@
 <script setup>
     const props = defineProps(['player','playerHistory'])
     const player = props.player
-    const playerId = player.id
+    const playerHistory = props.playerHistory
 
 // https://github.com/apexcharts/vue3-apexcharts
 

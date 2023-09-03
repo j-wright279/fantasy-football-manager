@@ -34,7 +34,7 @@
         align-items: center;
         flex-direction: column;
         height: 50vh;
-        max-width: 40%;
+        max-width: 45%;
     }
 
     /* .background {
@@ -56,7 +56,7 @@
     }
 
     .background {
-        background-image: url("img/dot-seamless-pattern.svg");
+        background-image: url("~/img/dot-seamless-pattern.svg");
         height: 500px;
         width: 80%;
         background-position:center;
@@ -66,5 +66,14 @@
         left: 10%;
         opacity: 10%;
         z-index: -1;
+    }
+
+    @media only screen and (max-width: 950px) {
+        .wiggly-motif{
+            top: 510px;
+        }
+        .container{
+            max-width: 70%;
+        }
     }
 </style>

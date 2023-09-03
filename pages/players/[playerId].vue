@@ -51,7 +51,7 @@ for (var i=0, iLen=list_of_teams.length; i<iLen; i++) {
                     <PlayerStatsTab :player="player"/>
                 </div>
                 <div v-else="item.index === 2">
-                    <PlayerHistoryTab :player="player" />
+                    <PlayerHistoryTab :player="player" :playerHistory="player_history" />
                 </div>
             </UCard>
             </template>
