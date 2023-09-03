@@ -1,13 +1,10 @@
-<script setup lang="ts">
-
-//const { data } = await useFetch("https://fantasy.premierleague.com/api/fixtures?future=1")
+<script setup>
 
 </script>
 
 <template>
     <div class="container">
-        <h1>Fixtures Coming Soon!</h1>
-        <!-- {{ data }} -->
+        <h1>Teams Coming Soon!</h1>
     </div>
 </template>
 

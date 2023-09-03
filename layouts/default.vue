@@ -1,7 +1,6 @@
 <template>
     <header>
         <nav>
-            <div class="header-left-container">
                 <NuxtLink to="/">
                     <UIcon name="i-heroicons-chart-pie" class="headerIcon"></UIcon>
                 </NuxtLink>
@@ -15,8 +14,10 @@
                     <li class="headerItem">
                         <UButton variant="link"><NuxtLink to="/fixtures" class="headerLink">Fixtures</NuxtLink></UButton>
                     </li>
+                    <li class="headerItem">
+                        <UButton variant="link"><NuxtLink to="/teams" class="headerLink">Teams</NuxtLink></UButton>
+                    </li>
                 </ul>
-            </div>
             <NuxtLink to="https://fantasy.premierleague.com/" class="header-image-container">
                 <img src="/img/premier-league.png" alt="Fantasy Football Link" class="headerImage">
             </NuxtLink>
@@ -56,7 +57,8 @@
         aspect-ratio: 2160 / 2739;
         background-color: white;
         padding: 5px;
-        border-radius: 5px;;
+        border-radius: 5px;
+        margin: 25px 35px 20px 30px;
     }
     .header-image-container {
         margin: auto 0;
@@ -65,10 +67,5 @@
         border-bottom: 1px solid black;
         width: 80%;
         margin: 0 auto;
-    }
-    body {
-        background-image: url("premier-league.png");
-        background-repeat: no-repeat;
-        background-size: 50px;
     }
 </style>
