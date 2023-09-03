@@ -37,27 +37,22 @@
         max-width: 45%;
     }
 
-    /* .background {
-        background-image: url("img/wave-haikei.svg");
-        background-position: 0 -360px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100vw;
-        height: 80vh
-    } */
-
     .wiggly-motif {
         position: absolute;
-        top: 450px;
+        top: 55vh;
         z-index: -2;
         width: 100%;
+        max-width: 1000px;
         justify-content: center;
         display: flex;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
     }
 
     .background {
         background-image: url("~/img/dot-seamless-pattern.svg");
-        height: 500px;
+        height: 60vh;
         width: 80%;
         background-position:center;
         background-repeat: repeat;
