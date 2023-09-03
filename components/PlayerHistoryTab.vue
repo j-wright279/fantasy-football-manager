@@ -1,7 +1,8 @@
 <script setup>
-    const props = defineProps(['player','playerHistory'])
+    const props = defineProps(['player','playerDetail','teams'])
     const player = props.player
-    const playerHistory = props.playerHistory
+    const playerDetail = props.playerDetail
+    const teams = props.teams
 
 // https://github.com/apexcharts/vue3-apexcharts
 
@@ -11,11 +12,15 @@ const options = ref({
     },
     plotOptions: {
         bar: {
-        borderRadius: 10,
-        borderRadiusApplication: "around",
+            borderRadius: 10,
+            borderRadiusApplication: "around",
         },
     },
+    markers:{
+        colors: ['white']
+    }
     });
+
     const series = ref([
     {
         name: "Score",
@@ -25,22 +30,19 @@ const options = ref({
 
     const updateChart = () => {
         //generate array of random numbers of length 10
-        const data = Array.from({ length: 10 }, () =>
+        const data = Array.from({ length: 4 }, () =>
             Math.floor(Math.random() * 100)
         );
 
         options.value = {
             ...options.value,
             xaxis: {
-            categories: Array.from(
-                { length: 10 },
-                (_, i) => new Date().getFullYear() - i
-            ), // array of last 10 years
+            categories: getFixtures()
             },
         };
         series.value = [
             {
-            name: "Score",
+            name: "Goals Scored",
             data: data,
             },
         ];
@@ -49,15 +51,29 @@ const options = ref({
     onMounted(() => {
         updateChart();
     });
+
+    function getFixtures(){
+        const fixtureHistory = playerDetail.history
+        const fixtureIds = []
+        fixtureHistory.forEach((fixture) => {fixtureIds.push(fixture.fixture)});
+
+        return fixtureIds
+    }
+
+    function getHistoryElement(elementName){
+        const elementArray = []
+        // THIS BIT IS A WIP
+        playerDetail.history.forEach((element)=>{elementArray.push(fixture[elementName])})
+    }
 </script>
 
 
 <template>
-    {{  data }}
+    {{  playerDetail.history }}
     <ClientOnly>
         <apexchart
             width="500"
-            type="bar"
+            type="line"
             :options="options"
             :series="series"
         ></apexchart>

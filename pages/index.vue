@@ -8,7 +8,7 @@
             <p>Welcome to the Fantasy Football Statistics Manager, here you can find up-to-date details on all your favourite players!</p>
         </div>
         <div class="wiggly-motif">
-            <svg id="visual" viewBox="0 0 900 200" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="900" height="200" fill="#1c1b22"></rect><path d="M0 91L30 103.5C60 116 120 141 180 143C240 145 300 124 360 106.7C420 89.3 480 75.7 540 81.7C600 87.7 660 113.3 720 121.3C780 129.3 840 119.7 870 114.8L900 110" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4ade80" stroke-width="40"></path></svg>
+            <svg id="visual" viewBox="0 0 900 200" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 91L30 103.5C60 116 120 141 180 143C240 145 300 124 360 106.7C420 89.3 480 75.7 540 81.7C600 87.7 660 113.3 720 121.3C780 129.3 840 119.7 870 114.8L900 110" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4ade80" stroke-width="40"></path></svg>
         </div>
         <div class="background"></div>
 </template>

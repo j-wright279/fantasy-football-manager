@@ -6,7 +6,13 @@
 
 
 <template>
-    {{  player }}
+    <ul>
+        <li>Selected by {{ player.selected_by_percent }}% of players</li>
+        <li>Transfers In: {{ player.transfers_in }}</li>
+        <li>Transfers Out: {{ player.transfers_out }}</li>
+        <li v-if="player.chance_of_playing_next_round != null">Chance Of Playing Next Round: {{ player.chance_of_playing_next_round }}</li>
+    </ul>
+    <!-- {{  player }} -->
 </template>
 
 <style scoped>

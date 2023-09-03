@@ -1,7 +1,7 @@
 <script setup>
 
 const route = useRoute()
-const { data: player_history } = await useFetch("/api/playerHistory/32")
+const { data: playerDetail } = await useFetch(`/api/playerDetail/${route.params.playerId}`)
 const { data: general } = await useFetch("/api/general")
 
 const list_of_players = general.value.elements
@@ -51,7 +51,7 @@ for (var i=0, iLen=list_of_teams.length; i<iLen; i++) {
                     <PlayerStatsTab :player="player"/>
                 </div>
                 <div v-else="item.index === 2">
-                    <PlayerHistoryTab :player="player" :playerHistory="player_history" />
+                    <PlayerHistoryTab :player="player" :playerDetail="playerDetail" :teams="list_of_teams"/>
                 </div>
             </UCard>
             </template>

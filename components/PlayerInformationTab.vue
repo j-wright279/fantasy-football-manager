@@ -7,7 +7,7 @@
 
 <template>
     <!-- {{  player }} -->
-    <ul id="infoContainer">
+    <ul>
         <li>Cost: £{{ player.now_cost / 10 }}m</li>
         <li>Form: {{ player.form }}</li>
         <li>Total Points: {{ player.total_points }}</li>
@@ -41,9 +41,6 @@
     }
     #goalButton:active{
         background-color: #bdbfca0F;
-    }
-
-    #infoContainer{
     }
 
 </style>
