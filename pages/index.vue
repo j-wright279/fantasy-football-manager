@@ -28,7 +28,7 @@
     }
     .container {
         max-width: 80%;
-        margin: 0 auto;
+        margin: 3vh auto;
         display:flex;
         justify-content: center;
         align-items: center;
@@ -56,7 +56,7 @@
         background-position:center;
         background-repeat: repeat;
         position: absolute;
-        top: 18vh;
+        top: 22vh;
         left: 10%;
         opacity: 10%;
         z-index: -1;
@@ -64,7 +64,7 @@
 
     @media only screen and (max-width: 950px) {
         .wiggly-motif > svg{
-            width: 105vw
+            width: 100vw
         }
         .container{
             max-width: 70%;
