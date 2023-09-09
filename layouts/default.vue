@@ -1,23 +1,23 @@
 <template>
     <header>
         <nav>
-                <NuxtLink to="/">
-                    <UIcon name="i-heroicons-chart-pie" class="headerIcon"></UIcon>
-                </NuxtLink>
-                <ul>
-                    <li class="headerItem">
-                        <UButton variant="link"><NuxtLink to="/" class="headerLink">Home</NuxtLink></UButton>
-                    </li>
-                    <li class="headerItem">
-                        <UButton variant="link"><NuxtLink to="/players" class="headerLink">Players</NuxtLink></UButton>
-                    </li>
-                    <li class="headerItem">
-                        <UButton variant="link"><NuxtLink to="/fixtures" class="headerLink">Fixtures</NuxtLink></UButton>
-                    </li>
-                    <li class="headerItem">
-                        <UButton variant="link"><NuxtLink to="/teams" class="headerLink">Teams</NuxtLink></UButton>
-                    </li>
-                </ul>
+            <NuxtLink to="/">
+                <UIcon name="i-heroicons-chart-pie" class="headerIcon"></UIcon>
+            </NuxtLink>
+            <ul>
+                <li class="headerItem">
+                    <UButton variant="link"><NuxtLink to="/" class="headerLink">Home</NuxtLink></UButton>
+                </li>
+                <li class="headerItem">
+                    <UButton variant="link"><NuxtLink to="/players" class="headerLink">Players</NuxtLink></UButton>
+                </li>
+                <li class="headerItem">
+                    <UButton variant="link"><NuxtLink to="/fixtures" class="headerLink">Fixtures</NuxtLink></UButton>
+                </li>
+                <li class="headerItem">
+                    <UButton variant="link"><NuxtLink to="/teams" class="headerLink">Teams</NuxtLink></UButton>
+                </li>
+            </ul>
             <NuxtLink to="https://fantasy.premierleague.com/" class="header-image-container">
                 <img src="/img/premier-league.png" alt="Fantasy Football Link" class="headerImage">
             </NuxtLink>
