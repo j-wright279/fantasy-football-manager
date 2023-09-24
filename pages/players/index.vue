@@ -1,18 +1,26 @@
 <script setup lang="ts">
+import types from '@nuxthq/ui';
 
-const { data } : any = await useFetch("/api/players")
-let players : any = [] 
+
+const { data } : any = await useFetch("/api/general")
+let players : any[] = []
+let positions : any[] = []
 if(data.value){
-    players = data.value.players
+    players = data.value.elements
+    positions = data.value.element_types
 }
 
-const allColumns = [ {
+const allColumns = [{
     key: 'now_cost',
     label: 'Cost',
     selected: true
 }, {
     key: 'second_name',
     label: "Name",
+    selected: true
+}, {
+    key: 'element_type',
+    label: 'Position',
     selected: true
 }, {
     key: "form",
@@ -58,6 +66,13 @@ function sort(players : any, column : any, order: boolean){
     return players.sort((a:any,b:any) => ((a[key] > b[key]) ? 1 : (a[key] < b[key]) ? -1 : 0) * (order ? -1 : 1)) 
 }
 
+function getPlayerPosition(player:any) {
+    const pos = positions.find((position) => {
+        return position.id === player.element_type
+    })
+    return pos.singular_name
+}
+
 </script>
 
 <template>
@@ -92,6 +107,9 @@ function sort(players : any, column : any, order: boolean){
             </template>
             <template #second_name-data="{ row }">
                 <span>{{ row.first_name }} {{ row.second_name }}</span>
+            </template>
+            <template #element_type-data="{ row }">
+                <span>{{ getPlayerPosition(row) }}</span>
             </template>
         </UTable>
         <div class="table-pagination-container">
